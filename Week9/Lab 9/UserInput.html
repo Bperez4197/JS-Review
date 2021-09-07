@@ -1,0 +1,69 @@
+<!--
+    Bryce Perez
+    Module 9 
+    Part B
+    This program displays a form that prompts the user for their name and age. It then provides 3 different buttons that display their results
+    lower on the same page by accessing the innerHTML of a specific Id.
+    test cases:
+    Bryce, 26 -> 36,52,BRYCE 
+    Dan, 15 -> 25,30, DAN
+    Tommy, 50 -> 60,100, TOMMY
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UserInput</title>
+  </head>
+  <body>
+    <form action="#" id="myForm">
+      <label for="userName">Your Name:</label>
+      <input type="text" id="userName" name="userName" value="Rick" />
+      <br />
+      <label for="age">Your Age:</label>
+      <input type="text" id="age" name="age" value="80" />
+      <br />
+      <input type="button" id="TenYears" value="10 Years Older" />
+      <input type="button" id="ageDoubled" value="Age doubled" />
+      <input type="button" id="nameCapitalized" value="Name Capitalized" />
+    </form>
+    <h3>Your age plus 10 years:</h3>
+    <p id="plusTenYears"></p>
+    <br />
+    <h3>Your age doubled:</h3>
+    <p id="doubled"></p>
+    <br />
+    <h3>Your name capitalized:</h3>
+    <p id="capitalized"></p>
+    <br />
+    <script>
+      let myForm = document.querySelector("#myForm");
+      let userName = myForm.userName;
+      let age = myForm.age;
+      let tenYearText = document.querySelector("#plusTenYears");
+      let doubleAgeText = document.querySelector("#doubled");
+      let capitalizedText = document.querySelector("#capitalized");
+
+      userName.value = prompt("Please enter your name:");
+      age.value = prompt("Please enter your age");
+
+      function addTenYears(event) {
+        tenYearText.innerHTML = parseInt(age.value) + 10;
+      }
+
+      function doubleAge(event) {
+        doubleAgeText.innerHTML = parseInt(age.value) * 2;
+      }
+
+      function capitalize(event) {
+        capitalizedText.innerHTML = userName.value.toUpperCase();
+      }
+
+      myForm.TenYears.addEventListener("click", addTenYears);
+      myForm.ageDoubled.addEventListener("click", doubleAge);
+      myForm.nameCapitalized.addEventListener("click", capitalize);
+    </script>
+  </body>
+</html>

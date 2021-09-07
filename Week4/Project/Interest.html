@@ -1,0 +1,52 @@
+<!--
+    Bryce Perez
+    Module 04 Project
+    Part A
+    This program asks the user for a starting balance and then displays a table of the balance and interest earned every year if interest is 3%.
+-->
+<html>
+  <head>
+    <title>Interest</title>
+    <style>
+      table {
+        border: solid black 1px;
+      }
+
+      th {
+        border: solid black 1px;
+      }
+
+      td {
+        border: solid black 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <script>
+        let startingBalance = parseInt(
+          prompt("Please enter your starting bank account balance:")
+        );
+        let interestPercent = 0.03;
+        document.write(
+          "<table> <tr><th>Year</th><th>Account Balance</th><th>Interest Earned</th></tr>"
+        );
+        for (let i = 1; i <= 10; i++) {
+          let interestPerYear = startingBalance * interestPercent;
+          document.write(
+            "<tr><td>" +
+              i +
+              "</td><td>" +
+              startingBalance.toFixed(2) +
+              "</td><td>" +
+              interestPerYear.toFixed(2) +
+              "</td></tr>"
+          );
+          startingBalance += interestPerYear;
+        }
+        document.write("</table>");
+      </script>
+    </main>
+  </body>
+</html>

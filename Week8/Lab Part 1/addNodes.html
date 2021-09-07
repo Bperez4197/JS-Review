@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Module 09 Lab, Part 2</title>
+    <!--
+	Bryce Perez
+    Module 08 Part 1 Lab B
+    This program starts with my name and a button that I appended to the document.body. Upon clicking the button, three p tags show up with some information about me.
+-->
+  </head>
+  <body>
+    <script>
+      // Other than your heading comment, no changes above this line!!!
+      // And remember to create and place your information using DOM techniques from the textbook
+      let heading = document.createElement("h1");
+      heading.innerHTML = "Bryce Perez";
+      document.body.appendChild(heading);
+      let btn = document.createElement("button");
+      btn.innerHTML = "Press me!";
+      document.body.appendChild(btn);
+      btn.onclick = function () {
+        let p1 = document.createElement("p");
+        p1.innerHTML = "I am from Peoria, Arizona.";
+        document.body.appendChild(p1);
+        let p2 = document.createElement("p");
+        p2.innerHTML = "I have two sisters.";
+        document.body.appendChild(p2);
+        let p3 = document.createElement("p");
+        p3.innerHTML = "I am 6' tall.";
+        document.body.appendChild(p3);
+      };
+    </script>
+  </body>
+</html>

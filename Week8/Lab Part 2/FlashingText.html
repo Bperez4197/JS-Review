@@ -1,0 +1,45 @@
+<!--
+    Bryce Perez
+    Module 8 Programming Project
+    Part 2
+    This program selects a specific node on the document.body by its class identification and then
+    every 1 second, changes that text color of that node.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flashing Text</title>
+    <style>
+        .flasher {
+            color: blue;
+        }
+
+    </style>
+  </head>
+  <body>
+    <p>
+        <header>Thanks for coming!</header>
+</p>
+<p class="flasher">Welcome to the party!</p>
+<p>I hope you brought your own music!</p>
+<script>
+    var flasher = document.styleSheets[0].cssRules[0];
+    console.log(flasher);
+    function changeColor(){
+        if(flasher.style.getPropertyValue("color") === "blue"){
+            flasher.style.setProperty("color","green");
+        }else if (flasher.style.getPropertyValue("color") === "green"){
+            flasher.style.setProperty("color", "red");
+        }else {
+            flasher.style.setProperty("color","blue");
+        }
+    }
+
+    setInterval(changeColor, 1000); 
+</script>
+  </body>
+</html>

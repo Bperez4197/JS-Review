@@ -1,0 +1,32 @@
+<!--
+Bryce Perez
+Module 02 Lab
+Part B
+
+This lab prompts the user for information and then displays that data using a document.write() method.
+Test cases:
+document.Write(username) -> username that was entered
+document.Write(userCity) -> user city that was entered
+document.Write(userMajor) -> user major that was entered
+
+-->
+<html>
+  <head>
+    <title>Input</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <script>
+        let userName = prompt("What is your name?");
+        let userCity = prompt("What city are your from?");
+        let userMajor = prompt("What was your major in college?");
+
+        document.write("<h1>Name: " + userName + "</h1>");
+        document.write("<h2>Your city: " + userCity + "</h2>");
+        document.write("<h3>Your major: " + userMajor + "</h3>");
+      </script>
+    </main>
+    <footer></footer>
+  </body>
+</html>

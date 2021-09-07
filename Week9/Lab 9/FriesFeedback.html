@@ -1,0 +1,60 @@
+<!--
+  Bryce Perez
+  Module 09 Lab
+  Part A
+  This program displays a form for a user to fill out and then submits that form to "https://wp.zybooks.com/form-viewer.php". The customerName widget
+  will not allow less than 5 or more than 30 characters to be submitted.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      // let customerName = document.querySelector("#customerName");
+      // let dateOfVisit = document.querySelector("#dateOfVisit");
+      // let size = document.querySelector("#size");
+      // let comment = document.querySelector("#comment");
+      // let returning = document.querySelector("#returning");
+    </script>
+  </head>
+  <body>
+    <form
+      action="https://wp.zybooks.com/form-viewer.php"
+      target="_blank"
+      method="POST"
+    >
+      <label for="customerName">Name:</label>
+      <input
+        type="text"
+        id="customerName"
+        name="customerName"
+        minlength="5"
+        maxlength="30"
+      /><br />
+      <label for="dateOfVisit">Date:</label>
+      <input type="date" id="dateOfVisit" name="dateOfVisit" /><br />
+      <label for="size">Choose Size:</label>
+      <select id="size" name="size">
+        <option value="small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option></select
+      ><br />
+      <p>Will you be returning?</p>
+      <div>
+        <input type="radio" id="yes" name="returning" value="yes" />
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="returning" value="no" />
+        <label for="no">No</label>
+      </div>
+      <br />
+      <label for="comments">Leave us a comment:</label> <br />
+      <textarea id="comment" name="comments" rows="4" cols="40"></textarea>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

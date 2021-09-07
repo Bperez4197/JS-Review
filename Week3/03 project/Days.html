@@ -1,0 +1,72 @@
+<!--
+    Bryce Perez
+    Module 03 Project
+    part A
+    This program asks the user to enter a number corresponding with a month. The program then writes to the document the month that was entered along with how many days are in that month.
+    test cases:
+    5 -> May has 31 days.
+    2 -> February has 28 days.
+    12-> December has 31 days.
+    15-> The number you entered is invalid. followed by another prompt to enter a number
+-->
+<html>
+  <head>
+    <title>Days</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <script>
+        var enteredNumber = parseInt(
+          prompt("Please enter the number for a month: ")
+        );
+        if (enteredNumber > 12 || enteredNumber < 0) {
+          document.write("The number you entered is invalid.");
+        } else {
+          switch (enteredNumber) {
+            case 1:
+              document.write("January has 31 days.");
+              break;
+            case 2:
+              document.write("February has 28 days.");
+              break;
+            case 3:
+              document.write("March has 31 days.");
+              break;
+            case 4:
+              document.write("April has 30 days.");
+              break;
+            case 5:
+              document.write("May has 31 days.");
+              break;
+            case 6:
+              document.write("June has 30 days.");
+              break;
+            case 7:
+              document.write("July has 31 days.");
+              break;
+            case 8:
+              document.write("August has 31 days.");
+              break;
+            case 9:
+              document.write("September has 30 days.");
+              break;
+            case 10:
+              document.write("October has 31 days.");
+              break;
+            case 11:
+              document.write("November has 30 days.");
+              break;
+            case 12:
+              document.write("December has 31 days.");
+              break;
+            default:
+              document.write("There has been some king of error..");
+              break;
+          }
+        }
+      </script>
+    </main>
+    <footer></footer>
+  </body>
+</html>

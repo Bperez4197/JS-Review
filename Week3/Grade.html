@@ -1,0 +1,50 @@
+<!--
+    Bryce Perez
+    Module 03 Lab
+    Part A
+    This program asks a user for a grade and outputs the grade that user has in a class. The program also tells the user how much they need to improve their grade buy if they are failing.
+    test cases:
+    55 -> F and 5%
+    82 -> B
+    91 -> A
+    27 -> F and 33%
+-->
+<html>
+  <head>
+    <title>Grades</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <script>
+        var grade = parseInt(prompt("Please enter your grade below."));
+        console.log(grade);
+        console.log(typeof gradeInt);
+        var difference = 60 - grade;
+        console.log(difference);
+        if (grade < 60) {
+          document.write(
+            "You have an F in the class. You need a " +
+              difference +
+              "% improvement to pass the class."
+          );
+        } else if (grade > 60 && grade < 70) {
+          document.write("You have a D in the class.");
+        } else if (grade > 70 && grade < 80) {
+          document.write("You have a C in the class.");
+        } else if (grade > 80 && grade < 90) {
+          document.write("You have a B in the class.");
+        } else if (grade > 90 && grade < 100) {
+          document.write("You have an A in the class.");
+        } else if (grade == 100) {
+          document.write(
+            "Congradulations! You have a perfect score in the class"
+          );
+        } else {
+          document.write("You did not enter a valid grade.");
+        }
+      </script>
+    </main>
+    <footer></footer>
+  </body>
+</html>

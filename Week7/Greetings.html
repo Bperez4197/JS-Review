@@ -1,0 +1,29 @@
+<!--
+    Bryce Perez
+    Module 07 Programming Project
+    Part A
+    This program asks the user to enter their first and last name and then displays a message on the document that uses the name.
+    test cases:
+    Bryce Perez -> Hello Mr/Mrs Perez! Or may I call you Bryce?
+    John Jackson -> Hello Mr/Mrs Jackson! Or may I call you John?
+    Joe Bennett -> Hello Mr/Mrs Bennett! Or may I call you Joe?
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Greetings</title>
+  </head>
+  <body>
+    <script>
+      var userName = prompt("Please enter your first and last name: ");
+      var space = userName.indexOf(" ");
+      var firstName = userName.substring(0, space);
+      var lastName = userName.substring(space + 1, userName.length);
+      // var userArray = userName.split(" ");
+
+      document.write(
+        `Hello Mr/Mrs ${lastName}! Or may I call you ${firstName}?`
+      );
+    </script>
+  </body>
+</html>

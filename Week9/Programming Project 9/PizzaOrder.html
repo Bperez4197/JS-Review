@@ -1,0 +1,151 @@
+<!--
+  Bryce Perez
+  Module 09 Programming Project
+  This program displays a form to a user for them to order pizza from.
+  The webpage takes the information entered and returns a personalized description of
+  their order and well as their total including tax.
+  test cases:
+  Bryce, large, stuffed crust, all toppings -> Thanks for your order Bryce! You ordered a size large stuffed crust pizza with pepperoni,sausage,cheese,peppers. Your total is $25.30 including tax.
+  John, small, regular crust, pepperoni -> Thanks for your order John! You ordered a size small regular crust pizza with pepperoni. Your total is $13.20 including tax.
+  Al, medium, thin crust, sausage and cheese -> Thanks for your order Al! You ordered a size medium thin crust pizza with sausage,cheese. Your total is $17.60 including tax.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza Order</title>
+  </head>
+  <body>
+    <form action="#" id="pizzaForm">
+      <label for="customerName">Customer Name:</label>
+      <input type="text" id="customerName" name="customerName" value="" />
+      <br />
+      <p>Size:</p>
+      <input type="radio" id="small" name="size" value="small" />
+      <label for="small">Small $10</label>
+      <input type="radio" id="medium" name="size" value="medium" />
+      <label for="medium">Medium $11</label>
+      <input type="radio" id="large" name="size" value="large" />
+      <label for="large">Large $12</label>
+      <input type="radio" id="personal" name="size" value="personal" />
+      <label for="personal">Personal $7</label>
+      <br />
+      <p>Crust</p>
+      <select id="crust" name="crust">
+        <option value="thin">Thin $2</option>
+        <option value="regular">Regular $0</option>
+        <option value="pan">Pan $3</option>
+        <option value="stuffed">Stuffed $6</option></select
+      ><br />
+      <p>Toppings:</p>
+      <input type="checkbox" id="pepperoni" name="pepperoni" />
+      <label for="pepperoni">Pepperoni $1</label>
+      <input type="checkbox" id="sausage" name="sausage" />
+      <label for="sausage">Sausage $1</label>
+      <input type="checkbox" id="cheese" name="cheese" />
+      <label for="cheese">Cheese $1</label>
+      <input type="checkbox" id="peppers" name="peppers" />
+      <label for="peppers">Peppers $1</label>
+      <br />
+
+      <input type="button" id="placeOrder" value="Place Order" />
+    </form>
+    <h3>Description:</h3>
+    <br />
+    <p id="descriptionText"></p>
+    <br />
+    <h3>Total:</h3>
+    <p id="totalText"></p>
+    <script>
+      var myForm = document.querySelector("#pizzaForm");
+      var customerName = myForm.customerName;
+      var customersName = "";
+      var size = "";
+      var crustOptions = document.getElementById("crust");
+      var crust = "";
+
+      /////////////////////////////////////////////////////
+
+      function inputDesc() {
+        var desc = document.getElementById("descriptionText");
+        var sizeRadio = document.getElementsByName("size");
+        var totalText = document.getElementById("totalText");
+        var pepperoni = document.getElementById("pepperoni");
+        var sausage = document.getElementById("sausage");
+        var cheese = document.getElementById("cheese");
+        var peppers = document.getElementById("peppers");
+        var total = 0;
+        const tax = 0.1;
+        let toppings = [];
+
+        for (let i = 0; i < sizeRadio.length; i++) {
+          if (sizeRadio[i].checked) {
+            size = sizeRadio[i].value.toString();
+            switch (size) {
+              case "small":
+                total += 10;
+                break;
+              case "medium":
+                total += 11;
+                break;
+              case "large":
+                total += 12;
+                break;
+              case "personal":
+                total += 7;
+                break;
+            }
+
+            crust = crustOptions.value;
+            switch (crust) {
+              case "thin":
+                total += 2;
+                break;
+              case "regular":
+                total += 0;
+                break;
+              case "pan":
+                total += 3;
+                break;
+              case "stuffed":
+                total += 6;
+                break;
+            }
+
+            customersName = customerName.value;
+          }
+        }
+
+        if (pepperoni.checked === true) {
+          toppings.push(pepperoni.name);
+        }
+        if (sausage.checked === true) {
+          toppings.push(sausage.name);
+        }
+        if (cheese.checked === true) {
+          toppings.push(cheese.name);
+        }
+        if (peppers.checked === true) {
+          toppings.push(peppers.name);
+        }
+        total += toppings.length + 1;
+
+        total += total * tax;
+
+        var description = `Thanks for your order ${customersName}! You ordered a size ${size} ${crust} crust pizza with ${toppings}.`;
+        desc.innerHTML = description;
+        var totText = `Your total is $${total.toFixed(2)} including tax.`;
+        totalText.innerHTML = totText;
+      }
+
+      ///////////////////////////////////////////////////////////
+
+      ///////////////////////
+
+      myForm.placeOrder.addEventListener("click", inputDesc);
+    </script>
+  </body>
+</html>

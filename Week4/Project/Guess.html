@@ -1,0 +1,28 @@
+<!--
+    Bryce Perez
+    Module 04 Project
+    Part B
+    This program repeated prompts the user to guess a number until they pick 7
+-->
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <script>
+        let playerGuess = parseInt(
+          prompt("Please guess a number between 1 and 10:")
+        );
+        while (playerGuess != 7) {
+          playerGuess = parseInt(
+            prompt("Please guess a number between 1 and 10:")
+          );
+          console.log(playerGuess);
+        }
+        document.write("<h1>Congratulations, you guessed the number!</h1>");
+      </script>
+    </main>
+  </body>
+</html>

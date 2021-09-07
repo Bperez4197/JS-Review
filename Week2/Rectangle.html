@@ -1,0 +1,49 @@
+<!--
+    Bryce Perez
+    Module 02 Project
+    Part A
+    This program asks the users for a length and a width of a rectangle and then displays the area and perimeter of that rectangle.
+    test cases:
+    L = 8 W = 4 -> area = 32 perimeter = 24
+    L = 4.4 W = 3.2 -> area =14.08 perimeter = 15.20
+    L = 34.65 W = 67.231 -> area = 2329.55 perimeter = 203.76
+-->
+<html>
+  <head>
+    <title>Rectangle</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <script>
+        let length = prompt("What is the length of your rectangle? (inches) ");
+        let width = prompt("What is the width of your rectangle? (inches)");
+        let area = length * width;
+        let perimeter = (parseFloat(length) + parseFloat(width)) * 2;
+        console.log(perimeter);
+        document.write("<h1>Your rectangle: </h1><br>");
+        document.write(
+          "<h2>The length you entered for your rectangle: " +
+            length +
+            " inches<h2><br>"
+        );
+        document.write(
+          "<h2>The width you entered for your rectangle: " +
+            width +
+            " inches<h2><br>"
+        );
+        document.write(
+          "<h2>The area of your rectangle: " +
+            area.toFixed(2) +
+            " inches<h2><br>"
+        );
+        document.write(
+          "<h2>The perimeter of your rectangle: " +
+            perimeter.toFixed(2) +
+            " inches<h2><br>"
+        );
+      </script>
+    </main>
+    <footer></footer>
+  </body>
+</html>

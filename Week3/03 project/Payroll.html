@@ -1,0 +1,64 @@
+<!--
+    Bryce Perez
+    Module 03 Project
+    part B
+    This program asks a user for a job title, how many hours they worked this week, and how many years they've worked for the restaurant. The program then returns the users gross pay depending on their answers.
+    test cases:
+    'K',40,3 -> 720
+    'H',32,.75 -> 384
+    'W',27,10 -> 162
+    
+-->
+<html>
+  <head>
+    <title>Payroll</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <script>
+        var jobTitle = prompt(
+          "Please enter the letter corresponding with your job title. 'W' for wait staff, 'H' for host, 'K' for kitchen staff "
+        );
+        var hoursWorked = parseInt(
+          prompt("Please enter the number of hours you worked this week.")
+        );
+        var yearsWorked = parseFloat(
+          prompt(
+            "Please enter the number of years you have worked for the restaurant."
+          )
+        );
+        if (jobTitle.toUpperCase() == "W") {
+          if (yearsWorked < 1) {
+            let total = 5 * hoursWorked;
+            document.write("Your gross pay is $" + total);
+          } else {
+            let total = 6 * hoursWorked;
+            document.write("Your gross pay is $" + total);
+          }
+        } else if (jobTitle.toUpperCase() == "H") {
+          if (yearsWorked <= 2) {
+            let total = 12 * hoursWorked;
+            document.write("Your gross pay is $" + total);
+          } else {
+            let total = 13.5 * hoursWorked;
+            document.write("Your gross pay is $" + total);
+          }
+        } else if (jobTitle.toUpperCase() == "K") {
+          if (yearsWorked <= 1) {
+            let total = 15 * hoursWorked;
+            document.write("Your gross pay is $" + total);
+          } else {
+            let total = 18 * hoursWorked;
+            document.write("Your gross pay is $" + total);
+          }
+        } else {
+          document.write(
+            "You did not enter a valid job title. Please refresh the page and enter 'W','K', or 'H'."
+          );
+        }
+      </script>
+    </main>
+    <footer></footer>
+  </body>
+</html>

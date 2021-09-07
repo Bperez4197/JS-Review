@@ -1,0 +1,46 @@
+<!--
+    Bryce Perez
+    Module 02 Programming Project
+    Part B
+    This program prompts the user to enter price and discount for a pair of pants and displays the discount calculation, taxes for the pants, and total cost of the pants after tax and discounts
+    test cases:
+    color: Gray priceOfPants: 56 discount: 40 -> subTotal=33.60, tax = 2.69, total = 36.29
+    color: red priceOfPants: 32 discount: 20 -> subTotal=25.60, tax = 2.05, total = 27.65
+    color: Purple priceOfPants: 135 discount: 7 -> subTotal=125.55, tax = 10.04, total = 135.59
+-->
+<html>
+  <head>
+    <title>Receipt</title>
+  </head>
+  <body>
+    <header><h1>Paul's Perfect Pants</h1></header>
+    <main>
+      <script>
+        let pantsColor = prompt("What color pants did you choose?");
+        let pantsPrice = prompt("What is the base price of the pants?");
+        let pantsDiscount = prompt(
+          "How much of a discount did the store offer you? (percentage sign already included)"
+        );
+        let discountCalc = pantsPrice * (pantsDiscount / 100);
+        let subTotal = pantsPrice - discountCalc;
+        let tax = subTotal * 0.08;
+        let total = subTotal + tax;
+        document.write(
+          "<h3>" + pantsColor + " pants: " + pantsPrice + "</h3><br>"
+        );
+        document.write(
+          "<p>" +
+            pantsDiscount +
+            "% off: -" +
+            discountCalc.toFixed(2) +
+            "</p><br>"
+        );
+        document.write("<h3>Subtotal: $" + subTotal.toFixed(2) + "</h3><br>");
+        document.write("<h3>Tax: $" + tax.toFixed(2) + "</h3><br>");
+        document.write("<p>--------------------------------</p><br>");
+        document.write("<h2>Total: $" + total.toFixed(2) + "</h2>");
+      </script>
+    </main>
+    <footer></footer>
+  </body>
+</html>

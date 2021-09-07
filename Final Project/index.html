@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Project</title>
+  </head>
+  <body>
+    <header><h1>Final.js</h1></header>
+    <main>
+      <form action="#" id="myForm">
+        <label for="userName">Name: </label>
+        <input
+          type="text"
+          id="userName"
+          name="userName"
+          placeholder="Your name"
+        />
+        <br />
+        <label for="userAge">Age: </label>
+        <input type="text" id="userAge" name="userAge" placeholder="Your age" />
+        <br />
+        <label for="bgColor">Background Color: </label>
+        <input
+          type="text"
+          id="bgColor"
+          name="bgColor"
+          placeholder="Background color"
+        />
+        <br />
+        <label for="textColor">Text Color: </label>
+        <input
+          type="text"
+          id="textColor"
+          name="textColor"
+          placeholder="Text color"
+        />
+        <br />
+        <label for="palCheck">Palindrome Checker: </label>
+        <input
+          type="text"
+          id="palCheck"
+          name="palCheck"
+          placeholder="palindrome?"
+        />
+        <br />
+        <input type="button" id="submit" value="Submit" />
+        <input type="reset" value="Clear" />
+      </form>
+      <h3>Summary:</h3>
+      <p id="mainContent"></p>
+    </main>
+    <script>
+      var myForm = document.querySelector("#myForm");
+      var userName = myForm.userName;
+      var userAge = myForm.userAge;
+      var bgColor = myForm.bgColor;
+      var textColor = myForm.textColor;
+      var pal = myForm.palCheck;
+
+      function palindromeChecker(value) {
+        if (value == value.split("").reverse().join("")) {
+          return "is a palindrome";
+        } else {
+          return "is not a palindrome";
+        }
+      }
+
+      function oddOrEven(age) {
+        if (age % 2 === 0) {
+          return "even";
+        } else {
+          return "odd";
+        }
+      }
+
+      function fillSumm() {
+        var main = document.getElementById("mainContent");
+        userName = userName.value;
+        userAge = userAge.value;
+        bgColor = bgColor.value;
+        textColor = textColor.value;
+        pal = palindromeChecker(pal.value);
+        var oddOrEvenAge = oddOrEven(userAge);
+
+        console.log(userName);
+        console.log(userAge);
+        console.log(bgColor);
+        console.log(textColor);
+        console.log(pal);
+
+        main.style.backgroundColor = bgColor;
+        main.style.color = textColor;
+
+        main.innerHTML = `Your name is ${userName} and you're ${userAge} years old. Your age is ${oddOrEvenAge}. You entered ${myForm.palCheck.value}, which ${pal}.`;
+      }
+
+      myForm.submit.addEventListener("click", fillSumm);
+    </script>
+  </body>
+</html>

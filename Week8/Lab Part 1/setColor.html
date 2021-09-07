@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Module 09 Lab, Part 1</title>
+    <!--
+        Bryce Perez
+        Module 08 Part 1 Lab A
+        This program prompts the user for two colors and changes dom elements to the colors typed in.
+    -->
+  </head>
+  <body>
+    <h1 id="headline">Colorful Web Page</h1>
+    <p>Behold, the Color-Change-Inator!</p>
+    <p>This amazing web page will allow the user to set the color!</p>
+    <h4 id="disclaimer">
+      NOTE: this web page is provided for educational purposes only. Any damage
+      or happiness incurred by the user as a result of choosing a color...well,
+      would be pretty weird.
+    </h4>
+    <script>
+      // Other than adding id attributes (and your heading comment), no changes above this line!!!
+      var userColor = prompt(
+        "Please enter the name of a color for the headline: "
+      );
+      document.getElementById("headline").style.color = userColor.toLowerCase();
+
+      var discColor = prompt(
+        "Please enter the name of a color for the disclaimer: "
+      );
+      document.getElementById(
+        "disclaimer"
+      ).style.backgroundColor = discColor.toLowerCase();
+    </script>
+  </body>
+</html>

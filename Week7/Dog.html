@@ -1,0 +1,40 @@
+<!--
+    Bryce Perez
+    Module 07 Programming Project
+    Part B
+    This program creates a Dog class and creates to instances of the dog class, The pup1 and pup2 objects. The dog class is built with a constructor function which has 3 properties and a method that are inherited by pup1 and pup2.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dog</title>
+  </head>
+  <body>
+    <script>
+      function Dog(name, breed, age) {
+        this.name = name;
+        this.breed = breed;
+        this.age = age;
+
+        this.incrementAge = function () {
+          this.age++;
+        };
+      }
+
+      var pup1 = new Dog("Fido", "Shepherd", 3);
+      var pup2 = new Dog("Harry", "Terrier", 10);
+
+      document.write(
+        `Our first dogs name is ${pup1.name}. He is a ${pup1.breed} who is ${pup1.age} years old. <br />`
+      );
+      document.write(
+        `Our second dogs name is ${pup2.name}. He is a ${pup2.breed} who is ${pup2.age} years old. <br />`
+      );
+      console.log(pup1);
+      pup1.incrementAge();
+      document.write(
+        `Our first dogs age after running the incrementAge method: ${pup1.age}`
+      );
+    </script>
+  </body>
+</html>
